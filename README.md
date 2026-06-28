@@ -1,6 +1,17 @@
 Commercial Data Integrity Case Study: 200k Financial Transaction Dataset Optimization
 Consultant Portfolio Asset | Data Integrity Solutions
 
+### Visual Data Audit (Before & After Cleaning)
+The images below illustrate the structural and categorical anomalies identified during the initial discovery phase alongside the successfully normalized production output.
+
+( BEFORE )- SCREENSHOT OF RAW DATASET
+<img width="855" height="699" alt="Screenshot -dirty financial data 2026-06-27 at 8 41 40 PM" src="https://github.com/user-attachments/assets/97039610-7f6f-44b7-ae45-4d6155903e51" />
+
+( AFTER ) - SCREENSHOT OF CLEANED FINISHED DATASET
+<img width="1358" height="637" alt="Screenshot _ cleaned -final financial dasta 2026-06-27 at 8 21 06 PM" src="https://github.com/user-attachments/assets/263d33d4-e6e0-4529-a8bf-fe55ee7eefaa" />
+
+
+
 1. Executive Summary
 This project demonstrates an advanced programmatic workflow designed to transform a large, high-volatility financial transactions dataset (199,853 rows) from an audited, highly fractured state into a production-ready database master copy.
 
@@ -16,6 +27,14 @@ Temporal Contamination: Crucial financial dates were physically impossible (e.g.
 Categorical Fragmentation: Text inputs in columns like Product_Name and Payment_Method suffered from mixed letter casings and trailing/leading hidden whitespaces, preventing accurate grouping or reporting.
 
 Sign and Missingness Anomalies: Numerical columns contained negative values for physical quantities and unit prices (e.g., -5.0 items, -445.34 USD), as well as empty cells (NaN) among otherwise valid sales records.
+
+
+### Visual Data Audit (Before & After Cleaning)
+The images below illustrate the structural and categorical anomalies identified during the initial discovery phase alongside the successfully normalized production output.
+<img width="855" height="699" alt="Screenshot -dirty financial data 2026-06-27 at 8 41 40 PM" src="https://github.com/user-attachments/assets/97039610-7f6f-44b7-ae45-4d6155903e51" />
+<img width="1358" height="637" alt="Screenshot _ cleaned -final financial dasta 2026-06-27 at 8 21 06 PM" src="https://github.com/user-attachments/assets/263d33d4-e6e0-4529-a8bf-fe55ee7eefaa" />
+
+
 
 3. Sequential Engineering Pipeline & Scripts
 Below are the exact production scripts implemented within the hybrid Python Pandas data pipeline to clean, standardize, and finalize the dataset.
