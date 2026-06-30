@@ -1,4 +1,4 @@
-# dirty_financial_transactions
+# 💰 Financial Transaction Data Integrity Pipeline
 
 <details>
 <summary>Before/After Comparison</summary>
@@ -9,10 +9,16 @@
 </details>
 
 ### Structured Text Snippet Data Comparison
-- **Before:** Contains raw unvalidated operational data with negative values, inconsistent strings (e.g., `pay pal`, `creditcard`), and missing status codes.
-- **After:** Appends automated validation flags (`NEGATIVE_QUANTITY`, `NEGATIVE_PRICE`, `FORMAT_CORRECTED`, `MISSING_STATUS`) to systematically audit and log record anomalies.
 
-### Core Data Integrity Fix Applied
-- **Format Standardization:** Normalized text inputs, dates, and category fields.
-- **Constraint Enforcement:** Identified and flagged illogical negative metrics for quantity and price.
-- **Completeness Auditing:** Marked and monitored missing fields to ensure full observability.
+| Column | Before (Raw Unvalidated) | After (Validated & Flagged) |
+| :--- | :--- | :--- |
+| **Payment_Method** | `pay pal`, `creditcard` | `PayPal`, `Credit Card` (Format Standardized) |
+| **Quantity** | `-5` | `5` / Flagged `NEGATIVE_QUANTITY` |
+| **Price** | `-150.00` | `150.00` / Flagged `NEGATIVE_PRICE` |
+| **Status_Code** | *[Blank]* | Flagged `MISSING_STATUS` |
+
+### Core Data Integrity Fixes Applied
+
+- **Format Standardization:** Normalized text inputs, dates, and category fields to ensure absolute uniformity across transaction logging systems.
+- **Constraint Enforcement:** Identified and flagged illogical negative metrics for quantity and price to preserve ledger consistency.
+- **Completeness Auditing:** Systematically marked and monitored missing fields to ensure full lifecycle observability and compliance.
