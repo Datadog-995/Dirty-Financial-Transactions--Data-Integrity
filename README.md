@@ -3,24 +3,8 @@
 <details>
 <summary>Before/After Comparison</summary>
 
-<table>
-<tr>
-<th width="35%">Before (Raw & Dirty Data)</th>
-<th width="65%">After (Cleaned & Flagged)</th>
-</tr>
-<tr>
-<td>
-
-![Before](extract%20fin%20ops%20history%20.png)
-
-</td>
-<td>
-
-![After](finanance%20trans%20ops%20clean%20.png)
-
-</td>
-</tr>
-</table>
+<img src="extract fin ops history .png" width="100%">
+<img src="finanance trans ops clean .png" width="100%">
 
 </details>
 
