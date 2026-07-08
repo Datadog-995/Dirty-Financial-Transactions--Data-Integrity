@@ -18,6 +18,14 @@ Financial systems frequently ingest noisy data, duplicate logs, or intentionally
 
 ---
 
+BEFORE - DIRTY DATASET
+<img width="687" height="150" alt="Screenshot - FINANCIAL TRANS DIRTY 2026-07-06 at 7 46 39 PM" src="https://github.com/user-attachments/assets/1c2cad9d-816b-4726-bc4d-b6bafbf0e500" />
+ 
+AFTER CLEAN DATA SET 
+ <img width="1230" height="344" alt="Screenshot 2026-07-07 at 11 33 20 PM" src="https://github.com/user-attachments/assets/d9f550b9-01f2-428a-a6d7-5031ef6d4da0" />
+
+
+
 ## 🚀 Key Features
 
 * **Ingestion Guardrails:** Real-time checking against pre-defined data schemas and data types.
