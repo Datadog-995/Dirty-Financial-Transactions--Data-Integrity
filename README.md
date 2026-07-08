@@ -1,4 +1,3 @@
- 
 # Dirty Financial Transactions - Data Integrity System
 
 [![Data Quality Solutions](https://img.shields.io/badge/Data_Quality-Solutions-blue.svg)](#)
@@ -43,8 +42,3 @@ Clone this repository to your local machine and navigate inside the project dire
 ```bash
 git clone [https://github.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity.git](https://github.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity.git)
 cd Dirty-Financial-Transactions--Data-Integrity
-
-<img width="687" height="150" alt="Screenshot - FINANCIAL TRANS DIRTY 2026-07-06 at 7 46 39 PM" src="https://github.com/user-attachments/assets/a0e4d774-5f0a-4bb3-8b7a-3c3f33edfef8" />
-
-<img width="1230" height="344" alt="Screenshot 2026-07-07 at 11 33 20 PM" src="https://github.com/user-attachments/assets/f5c16e3d-fb41-4585-88dc-fd9377021dda" />
-
