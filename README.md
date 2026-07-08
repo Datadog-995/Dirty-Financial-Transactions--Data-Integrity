@@ -40,3 +40,12 @@ The objective of this project was to perform a comprehensive data quality audit,
 └── assets/
     ├── raw_financial_transactions_dirty.png
     └── clean_financial_transactions_final.png
+## Data Audit & Visual Inspection
+
+Before running our automated Python transformation pipelines, a visual audit was conducted to identify structural inconsistencies, mixed line endings, and malformed characters.
+
+### Raw Data Profile
+![Raw Data State](assets/raw_financial_transactions_dirty.png)
+
+### Cleaned Data Profile
+![Cleaned Data State](assets/clean_financial_transactions_final.png)
