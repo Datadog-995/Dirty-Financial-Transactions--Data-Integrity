@@ -26,11 +26,18 @@ Financial systems frequently ingest noisy data, duplicate logs, or intentionally
 * **System Integrity Reports:** Generates summaries detailing error rates, failure points, and data pipeline compliance levels.
 
 ---
+BEFORE - DIRTY DATA SCREENSHOT
+<img width="687" height="150" alt="Screenshot - FINANCIAL TRANS DIRTY 2026-07-06 at 7 46 39 PM" src="https://github.com/user-attachments/assets/e115ab31-b0a0-44b9-ae69-2526989e2fc7" />
+
+AFTER-CLEANED DATA SCREENSHOT
+<img width="1230" height="344" alt="Screenshot 2026-07-07 at 11 33 20 PM" src="https://github.com/user-attachments/assets/2c7df9a2-784f-4cb0-bad3-4bce6711263d" />
+
 
 ## 🛠️ Tech Stack & Requirements
 
 * **Language:** Python 3.8+
-* **Libraries/Frameworks:** Pandas / NumPy / OpenRefine (for visual auditing)
+* **Libraries/Frameworks:** Pandas / NumPy / OpenRefine
+*  (for visual auditing)
 * **Environment:** Virtual environment configuration included via `requirements.txt`
 
 ---
