@@ -31,3 +31,12 @@ The objective of this project was to perform a comprehensive data quality audit,
 
 ---
 *This project is part of a professional data integrity portfolio for **Quality Data Solutions**. Specializing in risk mitigation, transaction reconciliation, and financial data cleaning. Let's optimize your data on Fiverr or Upwork!*
+├── raw_data/
+│   └── financial_Transactions_dirty.csv
+├── scripts/
+│   └── financial_Transactions_csv.ipynb
+├── deliverables/
+│   └── OPENREFIINE -finacial ops_history.csv
+└── assets/
+    ├── raw_financial_transactions_dirty.png
+    └── clean_financial_transactions_final.png
