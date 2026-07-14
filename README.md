@@ -5,7 +5,12 @@
 
 An automated system designed to scan, isolate, and remediate anomalous or "dirty" transaction entries within financial data pipelines. This project focuses on maintaining strict system integrity, preventing data corruption propagation, and generating clean operational reports.
 
+📊 Note on Datasets: Due to the large file sizes of the raw Brazilian e-commerce datasets, GitHub may not display the web preview of some ⁠.csv⁠ files. However, the complete datasets are fully intact in the repository and will download normally.
+
 ---
+
+
+
 
 ## 📌 Project Overview
 
