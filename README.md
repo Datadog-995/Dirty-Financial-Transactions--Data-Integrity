@@ -15,3 +15,5 @@ This repository serves as a functional portfolio demonstrating automated data in
 
 **Data Visualizations**
 ![Total Revenue by Product](portfolio_chart_revenue.png)
+<img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/9edf90d2-d33c-49a8-a264-1a41e20a42b6" />
+<img width="1600" height="960" alt="image" src="https://github.com/user-attachments/assets/35ea385e-3abc-4884-9e56-bcf4123a7ba4" />
