@@ -14,5 +14,4 @@ This repository serves as a functional portfolio demonstrating automated data in
 3.  **Automated Price Extraction:** A dynamic scraping script that navigates paginated storefronts to harvest and immediately format raw pricing strings into pure float values for instant Excel compatibility. 
 
 **Data Visualizations**
-![Total Revenue by Product](portfolio_chart_revenue.png)
-
+![Total Revenue Bar Chart](https://quickchart.io/chart?c={type:'bar',data:{labels:['Premium%20Beef%20Cuts','Artisan%20Bread','Poultry','Pastries','Pork','Specialty%20Cakes'],datasets:[{label:'Revenue',data:[45200,31500,28400,24100,19800,15600]}]}})
