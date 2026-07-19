@@ -14,16 +14,3 @@ The dataset contained significant integrity failures that I resolved to ensure r
 ![Revenue by Product](revenue_by_product.png)
 ![Payment Methods](payment_methods.png)
 ![Monthly Sales Trends](monthly_sales_trend.png)
-
-## Repository Contents
-* `raw_financial_transactions.csv`: The original, uncleaned source data.
-* `CLEAN-Financial_Transactions.csv`: The finalized, cleaned dataset ready for analysis.
-* `History-Openrefine-Financial_transactions.json`: Audit trail of transformation steps.
-* `financial_Transactions_csv.ipynb`: The technical notebook used for verification.
-the dataset's integrity:*
-
-![Revenue by Product](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/revenue_by_product.png)
-
-![Payment Methods](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/payment_methods.png)
-
-![Monthly Sales Trends](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/monthly_sales_trend.png)
