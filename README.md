@@ -1,16 +1,53 @@
-# Data Integrity Audit: Financial Transactions
+# Dirty Financial Transactions & Data Integrity Pipeline
 
-This repository contains an end-to-end audit and remediation pipeline for a dataset plagued by systemic data entry errors.
+## 📌 Project Overview
+In real-world data environments, financial ledgers are rarely pristine. Upstream parsing errors, malformed entries, and edge-case transactions frequently compromise data quality. This project establishes a robust, automated data cleaning and auditing pipeline using **Python and Pandas** to transform a highly chaotic financial dataset into a production-ready, auditable asset.
 
-## Problem Solved: Data Auditing
-The dataset contained significant integrity failures that I resolved to ensure report accuracy:
-* **The "01/01/1900" Problem:** Thousands of rows contained default system date errors. I implemented a flagging system (`audited_dates`) to quarantine these records, preserving the audit trail for investigation.
-* **Negative Financials:** I identified erroneous negative prices caused by system glitches, re-calculating values based on unit prices to restore financial integrity.
-* **Missing Attributes:** Standardized "UNKNOWN" and "NaN" entries across categorical columns (Payment Methods, Locations) to ensure consistent grouping for business intelligence.
+Instead of silently deleting problematic records, this pipeline applies explicit business rules, standardizes malformed schemas, imputes missing values using structural group logic, and applies a detailed audit logging system. This ensures complete transparency for downstream data analysts and compliance teams.
 
-## Key Insights & Visualizations
-*After cleaning, I generated the following reports to validate the dataset's integrity:*
+---
 
-![Revenue by Product](revenue_by_product.png)
-![Payment Methods](payment_methods.png)
-![Monthly Sales Trends](monthly_sales_trend.png)
+## 🛠️ The Problem: Core Data Quality Issues Identified
+Initial visual exploration and programmatic profiling revealed significant anomalies across the baseline ledger:
+*   **Temporal Anomalies:** Broken, out-of-bounds, or completely invalid calendar dates (e.g., `2025-02-30`) resulting from upstream parsing system failures.
+*   **Malformed Identifiers:** Structural irregularity in customer tracking codes, such as missing padding digits (e.g., `C847` and `C828` instead of matching the `CXXXX` profile).
+*   **Logical Ledger Flaws:** Standard ledger entries presenting negative figures in the `Price` column, skewing accounting aggregates.
+*   **Structural Gaps (Missing Data):** Undefined elements across critical transaction rows, specifically missing entries within the `Price`, `Quantity`, and `Transaction_Status` fields.
+
+---
+
+## 🚀 The Solution: Engineering Logic & Business Rules
+The data pipeline executes a sequential remediation strategy to enforce absolute integrity across the rows:
+
+### 1. Temporal Integrity & Validation
+*   **Action:** Parsed and coerced dates to standard format. Invalid chronological records were isolated as `NaT`.
+*   **Audit Logging:** Generated an explicit `Date_Audit_Status` tracking column tagging rows as `Valid`, `Blank`, or `Invalid Date`.
+
+### 2. ID Standardization
+*   **Action:** Extracted and evaluated text string structural patterns. 
+*   **Fix:** Handled string normalization by enforcing regex tracking and executing numerical padding (`.zfill(4)`) to automatically correct shorthand IDs (e.g., `C847` $\rightarrow$ `C0847`).
+*   **Audit Logging:** Flagged affected rows directly in a dedicated `Customer_ID_Audit_Status` tracking schema.
+
+### 3. Financial Logic Enforcement
+*   **Action:** Realigned standard ledger math by converting accounting line errors to absolute positive values (`.abs()`).
+*   **Audit Logging:** Documented line flips inside a `Price_Audit_Check` column tracking rows updated from `Negative Price (Flipped to Positive)`.
+
+### 4. Smart Group Imputation & Accounting Adjustments
+*   **Action:** Instead of dropping rows with critical gaps, missing items were imputed programmatically based on product cohorts:
+    *   **Prices:** Missing amounts were filled using the specific group median pricing (e.g., Tablet median: `$734.0`, Laptop median: `$503.0`).
+    *   **Quantities:** Blank counts were filled using the median volume of that specific product type.
+*   **Status Remediation:** Reclassified data instances showing `Unknown` ledger fulfillment statuses to an explicit `Requires Review` flag for direct accounting escalation.
+*   **Transaction Type Segmentation:** Evaluated row sign orientations to derive a distinct `Transaction_Type` categorical feature mapping rows cleanly to either a `Sale` or a `Return`.
+
+---
+
+## 📊 Data Visualization & Dashboarding
+To monitor pipeline outcomes and ledger behavior, the project integrates a clean, dual-panel analysis layout built via `Seaborn` and `Matplotlib`:
+1.  **Distribution of Quantity Audit Statuses:** A pie chart detailing the baseline integrity breakdown of the raw ledger rows (separating valid transactions from recognized returns).
+2.  **Top Tech Products by Total Value:** A horizontal bar chart isolating transaction value magnitude across core business categories (e.g., *Coffee Machine, Tablet, Laptop, Headphones, Smartphones*) using absolute value summaries to provide a high-fidelity picture of baseline operational scale.
+
+---
+
+## 📁 Repository Structure
+*   `financial_Transactions_csv.ipynb`: Core Jupyter/Google Colab workbook executing the full programmatic pandas cleaning workflow.
+*   `CLEAN-Financial_Transactions.csv`: The finalized, production-ready dataset output by the automated pipeline.
