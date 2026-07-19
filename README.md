@@ -20,4 +20,9 @@ The dataset contained significant integrity failures that I resolved to ensure r
 * `CLEAN-Financial_Transactions.csv`: The finalized, cleaned dataset ready for analysis.
 * `History-Openrefine-Financial_transactions.json`: Audit trail of transformation steps.
 * `financial_Transactions_csv.ipynb`: The technical notebook used for verification.
+## Key Insights & Visualizations
+*After cleaning, I generated the following reports to validate the dataset's integrity:*
 
+![Revenue by Product](revenue_by_product.png)
+![Payment Methods](payment_methods.png)
+![Monthly Sales Trends](monthly_sales_trend.png)
