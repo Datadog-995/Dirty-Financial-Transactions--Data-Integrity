@@ -53,3 +53,59 @@ Below are the visual insights generated from the cleaned financial ledger:
 ## 📁 Repository Structure
 *   `financial_Transactions_csv.ipynb`: Core Jupyter/Google Colab workbook executing the full programmatic pandas cleaning workflow.
 *   `CLEAN-Financial_Transactions.csv`: The finalized, production-ready dataset output by the automated pipeline.
+*   
+### 🐍 Python Visualization Script
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+# 1. Load the data directly from your GitHub repository
+url = "[https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/CLEAN-Financial_Transactions.csv](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/CLEAN-Financial_Transactions.csv)"
+df = pd.read_csv(url)
+
+sns.set_theme(style="whitegrid")
+
+# --- CHART 1: Top 10 Selling Products ---
+plt.figure(figsize=(12, 6))
+
+top_products = (
+    df.groupby("Product_Name")["Price"]
+    .sum()
+    .sort_values(ascending=False)
+    .head(10)
+    .reset_index()
+)
+
+sns.barplot(
+    data=top_products,
+    x="Price",
+    y="Product_Name",
+    hue="Product_Name",
+    palette="Blues_r",
+    legend=False,
+)
+plt.title("Top 10 Selling Products by Total Revenue", fontsize=14, pad=15)
+plt.xlabel("Total Revenue ($)", fontsize=12)
+plt.ylabel("Product Name", fontsize=12)
+plt.tight_layout()
+plt.savefig("top_selling_products.png")
+plt.show()
+
+# --- CHART 2: Payment Methods ---
+plt.figure(figsize=(8, 5))
+
+sns.countplot(
+    data=df,
+    x="Payment_Method",
+    hue="Payment_Method",
+    palette="Set2",
+    legend=False,
+)
+plt.title("Payment Methods Breakdown", fontsize=14, pad=15)
+plt.xlabel("Payment Method", fontsize=12)
+plt.ylabel("Transaction Count", fontsize=12)
+plt.tight_layout()
+plt.savefig("payment_methods.png")
+plt.show()
