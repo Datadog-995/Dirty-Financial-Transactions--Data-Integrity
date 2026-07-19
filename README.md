@@ -1,21 +1,23 @@
-# E-Commerce Data Integrity & Automation Services
+# Data Integrity Audit: Financial Transactions
 
-**Overview**
-This repository serves as a functional portfolio demonstrating automated data ingestion, multi-page web scraping, and ledger formatting tailored for e-commerce and retail suppliers. The automated pipelines contained here transform messy, unstandardized data into clean, tax-ready CSV ledgers.
+This repository contains an end-to-end audit and remediation pipeline for a dataset plagued by systemic data entry errors.
 
-**Core Capabilities**
-* **Automated Web Scraping:** Python-based web agents (`BeautifulSoup`, `requests`) designed to politely navigate multi-page e-commerce catalogs, bypassing static limits to extract competitor pricing and product data at scale.
-* **Data Integrity & Formatting:** End-to-end cleaning workflows utilizing Pandas to strip anomalous text (e.g., rogue currency symbols), handle null values, and standardize date/time formats for financial modeling.
-* **Cloud Automation:** Continuous integration pipelines built with GitHub Actions to schedule and execute data-cleaning scripts automatically.
+## Problem Solved: Data Auditing
+The dataset contained significant integrity failures that I resolved to ensure report accuracy:
+* **The "01/01/1900" Problem:** Thousands of rows contained default system date errors. I implemented a flagging system (`audited_dates`) to quarantine these records, preserving the audit trail for investigation.
+* **Negative Financials:** I identified erroneous negative prices caused by system glitches, re-calculating values based on unit prices to restore financial integrity.
+* **Missing Attributes:** Standardized "UNKNOWN" and "NaN" entries across categorical columns (Payment Methods, Locations) to ensure consistent grouping for business intelligence.
 
-**Featured Projects**
-1.  **Brazilian E-Commerce Logistics Audit:** A comprehensive cleanup of a massive, multi-table retail dataset, structuring raw sales, customer, and shipping records into pristine, relational analytical outputs.
-  ### Brazilian E-Commerce: Records Processed by Table
-![Records Processed Bar Chart](https://quickchart.io/chart?c={type:'horizontalBar',data:{labels:['Orders','Customers','Reviews','Products'],datasets:[{label:'Rows%20Cleaned',data:[99441,99441,99224,32951],backgroundColor:'%233498DB'}]}})
-2.  **Bakery & Butcher Supplier Ledger:** An end-to-end data integrity project that transformed messy, inconsistent local sales records into a strictly formatted, calculable financial ledger.
-![Total Revenue Bar Chart](https://quickchart.io/chart?c={type:'bar',data:{labels:['Premium%20Beef%20Cuts','Artisan%20Bread','Poultry','Pastries','Pork','Specialty%20Cakes'],datasets:[{label:'Revenue',data:[45200,31500,28400,24100,19800,15600]}]}})
+## Key Insights & Visualizations
+*After cleaning, I generated the following reports to validate the dataset's integrity:*
 
-3.  **Automated Price Extraction:** A dynamic scraping script that navigates paginated storefronts to harvest and immediately format raw pricing strings into pure float values for instant Excel compatibility. 
-### Scraping Output: String-to-Float Conversion Rate
-![Extraction Success Doughnut Chart](https://quickchart.io/chart?c={type:'doughnut',data:{labels:['Formatted%20Floats%20(Success)','Null/Out%20of%20Stock'],datasets:[{data:[96.5,3.5],backgroundColor:['%232ECC71','%23E74C3C']}]}})
+![Revenue by Product](revenue_by_product.png)
+![Payment Methods](payment_methods.png)
+![Monthly Sales Trends](monthly_sales_trend.png)
+
+## Repository Contents
+* `raw_financial_transactions.csv`: The original, uncleaned source data.
+* `CLEAN-Financial_Transactions.csv`: The finalized, cleaned dataset ready for analysis.
+* `History-Openrefine-Financial_transactions.json`: Audit trail of transformation steps.
+* `financial_Transactions_csv.ipynb`: The technical notebook used for verification.
 
