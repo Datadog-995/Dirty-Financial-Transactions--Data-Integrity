@@ -23,6 +23,11 @@ The dataset contained significant integrity failures that I resolved to ensure r
 ## Key Insights & Visualizations
 *After cleaning, I generated the following reports to validate the dataset's integrity:*
 
-![Revenue by Product](revenue_by_product.png)
-![Payment Methods](payment_methods.png)
-![Monthly Sales Trends](monthly_sales_trend.png)
+## Key Insights & Visualizations
+*After cleaning, I generated the following reports to validate the dataset's integrity:*
+
+![Revenue by Product](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/revenue_by_product.png)
+
+![Payment Methods](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/payment_methods.png)
+
+![Monthly Sales Trends](https://raw.githubusercontent.com/Datadog-995/Dirty-Financial-Transactions--Data-Integrity/main/monthly_sales_trend.png)
