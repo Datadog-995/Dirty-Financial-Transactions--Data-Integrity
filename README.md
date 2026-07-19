@@ -45,7 +45,7 @@ The data pipeline executes a sequential remediation strategy to enforce absolute
 To monitor pipeline outcomes and ledger behavior, the project integrates a clean, dual-panel analysis layout built via `Seaborn` and `Matplotlib`:
 1.  **Distribution of Quantity Audit Statuses:** A pie chart detailing the baseline integrity breakdown of the raw ledger rows (separating valid transactions from recognized returns).
 2.  **Top Tech Products by Total Value:** A horizontal bar chart isolating transaction value magnitude across core business categories (e.g., *Coffee Machine, Tablet, Laptop, Headphones, Smartphones*) using absolute value summaries to provide a high-fidelity picture of baseline operational scale.
-
+![Ledger Dashboard](product_transaction_summary.png)
 ---
 
 ## 📁 Repository Structure
