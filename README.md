@@ -43,19 +43,16 @@ The data pipeline executes a sequential remediation strategy to enforce absolute
 ### 📊 Data Visualizations
 Below are the visual insights generated from the cleaned financial ledger:
 
-#### 1. Top 10 Selling Products by Total Revenue
-<img width="800" height="500" alt="payment_methods (1)" src="https://github.com/user-attachments/assets/5c6a153c-56df-479c-8e14-7f1252fc343b" />
-<img width="1200" height="600" alt="top_selling_products (1)" src="https://github.com/user-attachments/assets/b7215428-38c1-4c66-975e-44cc8648a59d" />
 
-
-#### 2. Payment Methods Breakdown
-![Payment Methods](payment_methods.png)
----
 
 ## 📁 Repository Structure
 *   `financial_Transactions_csv.ipynb`: Core Jupyter/Google Colab workbook executing the full programmatic pandas cleaning workflow.
 *   `CLEAN-Financial_Transactions.csv`: The finalized, production-ready dataset output by the automated pipeline.
-*   
+*   #### 1. Top 10 Selling Products by Total Revenue
+<img width="1200" height="600" alt="top_selling_products" src="https://github.com/user-attachments/assets/b7215428-38c1-4c66-975e-44cc8648a59d" />
+
+#### 2. Payment Methods Breakdown
+<img width="800" height="500" alt="payment_methods" src="https://github.com/user-attachments/assets/5c6a153c-56df-479c-8e14-7f1252fc343b" />
 ### 🐍 Python Visualization Script
 
 ```python
