@@ -4,6 +4,9 @@
 - [Amazon Web Services](https://amazon.com) - Cloud Infrastructure (Affiliate Link)
 - [Datadog](https://datadog.com) - Monitoring Stack (Affiliate Link)
 ---
+* **[Make.com](https://www.make.com/)** – Visual automation platform for connecting Google Sheets, OpenRefine exports, and webhook triggers without writing custom middleware.
+* **[monday.com Work OS](https://monday.com/)** – Operational CRM and task management platform to track data audit issues, inventory anomalies, and team review pipelines.
+* **[ActiveCampaign](https://www.activecampaign.com/)** – B2B customer data platform and email automation engine for lead validation and customer sync.
 ## 🛠️ Recommended E-Commerce Data Pipeline & Automation Stack
 
 To automate data validation, scheduled exports, and lead hygiene workflows, the following platforms are integrated into this pipeline architecture:
